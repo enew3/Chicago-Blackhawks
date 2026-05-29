@@ -1,3 +1,36 @@
+# Central vs Wide Ball Progression Analysis
+
+**Evan New — Chicago Blackhawks Research Internship Project**
+
+This project analyzes when central vs wide ball progression leads to a more favorable outcome in simulated soccer tracking data. Using 2,993 games (~42,000 progressions) from the GRF dataset, I compute a **Progression Value (PV)** metric — defined as mean xG minus turnover rate times turnover cost — across three contextual factors: field third, score state, and defensive shape (compact vs stretched).
+
+### Scripts
+
+| Script | Description |
+|--------|-------------|
+| `scripts/progression_analysis.py` | Identifies ball progressions, labels outcomes, computes PV, and runs an interactive lookup tool |
+| `scripts/visualizations.py` | Generates figures from the saved results |
+
+### How to Run
+
+Pre-computed results are saved in `events/`. To regenerate figures:
+```
+python scripts/visualizations.py
+```
+
+To re-run the full analysis pipeline (requires raw data in `data/`):
+```
+python scripts/progression_analysis.py
+```
+
+### Output
+
+- `events/progressions_checkpoint.csv` — all labeled progressions
+- `events/pv_table.csv` — PV results by zone, third, score state, and defensive shape
+- `figures/` — all output figures
+
+---
+
 # Simulating Tracking Data to Advance Sports Analytics Research
 
 
